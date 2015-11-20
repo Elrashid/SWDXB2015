@@ -1,0 +1,130 @@
+﻿
+
+<!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<html lang='ar-AE'>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="@Url.Content("~/Content/materialize.css")" rel="stylesheet" type="text/css" />
+    <link href="~/Content/kendo/2015.1.318/kendo.common-material.min.css" rel="stylesheet" />
+    <link href="~/Content/kendo/2015.1.318/kendo.material.min.css" rel="stylesheet" />
+
+    <script src="~/Scripts/kendo/2015.1.318/jquery.min.js"></script>
+    <script src="~/Scripts/kendo/2015.1.318/kendo.ui.core.min.js"></script>
+    <script src="@Url.Content("~/Scripts/materialize.js")"></script>
+    <script src="@Url.Content("~/Scripts/String.js")"></script>
+
+
+
+</head>
+<body>
+    <script>
+
+
+
+        var DEBUG = true;
+    </script>
+    <header></header>
+    <main>
+        <div class="container">
+
+            <div class="row z-depth-4">
+                <div class="col m12 s12">
+                    <div class="card-panel red lighten-5">
+                        <div class="card-content  center-align flow-text">
+                            <span class="card-title">Reduce high energy bills, improve comfort and help to protect the environment.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row z-depth-4">
+                <div class="col m4 s12">
+                    <div class="card-panel ">
+                        <div class="card-content  center-align flow-text">
+                            (1)  INPUT
+                         </div>
+                    </div>
+                </div>
+                <div class="col m4 s12">
+                    <div class="card-panel  ">
+                        <div class="card-content  center-align flow-text">
+                            (2) GET
+                        </div>
+                    </div>
+                </div>
+                <div class="col m4 s12">
+                    <div class="card-panel ">
+                        <div class="card-content  center-align flow-text">
+                            (3) SAVE
+                        </div>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="card-panel red lighten-5">
+                @Html.Partial("~/Views/Account/Register.cshtml")
+            </div>
+        </div>
+    </main>
+
+
+    <script>
+        function initDrop() {
+            initMaterialize();
+        }
+
+        function initMaterialize() {
+            $(document).ready(function () {
+                $('.collapsible').collapsible({
+                    accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+                });
+
+
+                $('.dropdown-button').dropdown({
+                    inDuration: 300,
+                    outDuration: 225,
+                    constrain_width: false, // Does not change width of dropdown to that of the activator
+                    hover: true, // Activate on hover
+                    gutter: 0, // Spacing from edge
+                    belowOrigin: false // Displays dropdown below the button
+                }
+             );
+
+                Materialize.updateTextFields();
+
+
+
+                $('.datepicker').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 15 // Creates a dropdown of 15 years to control year
+                });
+
+
+                $(document).ready(function () {
+                    $('select').material_select();
+                });
+
+
+            });
+
+        }
+
+
+
+        initDrop();
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
